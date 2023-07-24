@@ -2,13 +2,7 @@
 // Console.WriteLine("Hello, World!");
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 // [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
-// double PromptDouble(string mess)
-// {
-//     Console.WriteLine(mess);
-//     string value = Console.ReadLine();
-//     double result = Convert.ToDouble(value);
-//     return result;
-// }
+
 int PromptInt(string mess)
 {
     Console.WriteLine(mess);
@@ -27,7 +21,7 @@ double[] CreateArrayRndDouble(int size, int min, int max)
     for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i] < 0)
-        arr[i] = rnd.Next(min, max + 1) - rnd.NextDouble();
+            arr[i] = rnd.Next(min, max + 1) - rnd.NextDouble();
         else arr[i] = rnd.Next(min, max + 1) + rnd.NextDouble();
     }
     return arr;
@@ -37,7 +31,7 @@ void PrintArray1(double[] arr, double num)
     Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}.  ");
         else Console.Write($"{arr[i]}");
     }
     Console.WriteLine($"]  -> {num}");
@@ -49,7 +43,7 @@ double Different(double[] arr)
     double result = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if(arr[i] > max) max = arr[i];
+        if (arr[i] > max) max = arr[i];
     }
     for (int i = 0; i < arr.Length; i++)
     {
@@ -59,29 +53,17 @@ double Different(double[] arr)
     return result;
 }
 
-/*double[] CreateArrayRndDoubleRound2(int size, int min, int max)
-{
-    double[] arr = new double[size];
 
-    Random rnd = new Random();
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (arr[i] < 0)
-            arr[i] =  rnd.Next(min, max + 1) -  rnd.NextDouble();
-        else arr[i] = rnd.Next(min, max + 1) + rnd.NextDouble();
-    }
-    return arr;
-}*/
 
 void PrintArrayRound(double[] arr, double num)
 {
     Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i < arr.Length - 1) Console.Write($"{Math.Round(arr[i], 2)}, ");
-        else Console.Write($"{Math.Round(arr[i],2)}");
+        if (i < arr.Length - 1) Console.Write($"{Math.Round(arr[i], 2)}.  ");
+        else Console.Write($"{Math.Round(arr[i], 2)}");
     }
-    Console.WriteLine($"]  -> {Math.Round(num,2)}");
+    Console.WriteLine($"]  -> {Math.Round(num, 2)}");
 }
 
 
