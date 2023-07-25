@@ -34,7 +34,7 @@ void PrintArray1(double[] arr, double num)
         if (i < arr.Length - 1) Console.Write($"{arr[i]}.  ");
         else Console.Write($"{arr[i]}");
     }
-    Console.WriteLine($"]  -> {num}");
+    Console.WriteLine($"]  => {num}");
 }
 double Different(double[] arr)
 {
@@ -63,7 +63,7 @@ void PrintArrayRound(double[] arr, double num)
         if (i < arr.Length - 1) Console.Write($"{Math.Round(arr[i], 2)}.  ");
         else Console.Write($"{Math.Round(arr[i], 2)}");
     }
-    Console.WriteLine($"]  -> {Math.Round(num, 2)}");
+    Console.WriteLine($"]  => {Math.Round(num, 2)}");
 }
 
 
